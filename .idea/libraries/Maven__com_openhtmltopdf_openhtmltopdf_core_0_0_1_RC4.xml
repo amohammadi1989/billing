@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.openhtmltopdf:openhtmltopdf-core:0.0.1-RC4">
+    <CLASSES>
+      <root url="jar://D:/apache-maven-3.5.0/repository/com/openhtmltopdf/openhtmltopdf-core/0.0.1-RC4/openhtmltopdf-core-0.0.1-RC4.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://D:/apache-maven-3.5.0/repository/com/openhtmltopdf/openhtmltopdf-core/0.0.1-RC4/openhtmltopdf-core-0.0.1-RC4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://D:/apache-maven-3.5.0/repository/com/openhtmltopdf/openhtmltopdf-core/0.0.1-RC4/openhtmltopdf-core-0.0.1-RC4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
