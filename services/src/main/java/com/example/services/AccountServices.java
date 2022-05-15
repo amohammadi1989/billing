@@ -17,21 +17,22 @@ public class AccountServices {
     this.accountRepository = accountRepository;
   }
   
-  public List<Account> getAccount(){
-    return  accountRepository.findAll();
-  }
-  @PostConstruct
-  public void init(){
-    saveAccount("A","L");
-    saveAccount("A1","L1");
-    saveAccount("A2","L2");
-    saveAccount("A3","L3");
-    saveAccount("A4","L4");
-    saveAccount("A5","L5");
+  public List<Account> getAccount() {
+    return accountRepository.findAll();
   }
   
-  private void saveAccount(String name,String lastName) {
-    Account account=Account.builder().name( name ).lastName( lastName ).build();
+  @PostConstruct
+  public void init() {
+    saveAccount( "A", "L" );
+    saveAccount( "A1", "L1" );
+    saveAccount( "A2", "L2" );
+    saveAccount( "A3", "L3" );
+    saveAccount( "A4", "L4" );
+    saveAccount( "A5", "L5" );
+  }
+  
+  private void saveAccount(String name, String lastName) {
+    Account account = Account.builder().name( name ).lastName( lastName ).build();
     accountRepository.save( account );
   }
 }

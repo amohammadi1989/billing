@@ -13,7 +13,7 @@ import java.io.Serializable;
  * Created By: Ali Mohammadi
  * Date: 15 May, 2022
  */
-@Entity
+@Entity(name = "Account")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
