@@ -8,9 +8,9 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.6.6</version>
     </parent>
-    <groupId>org.example</groupId>
+    <groupId>org.example.billing</groupId>
     <artifactId>services</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
     </properties>

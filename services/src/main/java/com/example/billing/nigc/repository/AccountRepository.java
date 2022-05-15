@@ -1,5 +1,5 @@
-package com.example.repository;
-import com.example.entity.Account;
+package com.example.billing.nigc.repository;
+import com.example.billing.nigc.entity.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 @Repository

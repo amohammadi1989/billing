@@ -1,6 +1,7 @@
-package com.example.services;
-import com.example.entity.Account;
-import com.example.repository.AccountRepository;
+package com.example.billing.nigc.services;
+import com.example.billing.nigc.entity.Account;
+import com.example.billing.nigc.repository.AccountRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -11,11 +12,10 @@ import java.util.List;
  */
 @Service
 public class AccountServices {
-  private final AccountRepository accountRepository;
   
-  public AccountServices(AccountRepository accountRepository) {
-    this.accountRepository = accountRepository;
-  }
+  @Autowired
+  private  AccountRepository accountRepository;
+  
   
   public List<Account> getAccount() {
     return accountRepository.findAll();

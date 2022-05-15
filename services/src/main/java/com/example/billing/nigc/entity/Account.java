@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.example.billing.nigc.entity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
