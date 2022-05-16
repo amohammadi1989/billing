@@ -24,4 +24,7 @@ public class Account implements Serializable {
   private Long id;
   private String name;
   private String lastName;
+  private String age;
+  private String address;
+  private String amount;
 }
