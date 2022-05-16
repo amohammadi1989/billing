@@ -18,8 +18,10 @@ import java.util.List;
 public class IndexController {
      @Autowired
      private AccountServices accountServices;
+
     @GetMapping("/")
     public RedirectView index(RedirectAttributes attributes) {
+    
         return new RedirectView("index.html");
     }
     @GetMapping("/getAccount")

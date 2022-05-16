@@ -5,40 +5,54 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8"/>
-    <title>Hello</title>
+    <title>Sample page of integration spring boot and struts</title>
     <sj:head jqueryui="true" jquerytheme="cupertino"/>
-<%--    <script src="uStates.js"></script>
-    <script src="http://d3js.org/d3.v3.min.js"></script>--%>
+    <style>
+        #accounts {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #accounts td, #accounts th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #accounts tr:nth-child(even){background-color: #f2f2f2;}
+
+        #accounts tr:hover {background-color: #ddd;}
+
+        #accounts th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+    </style>
 </head>
 <body>
 <sj:tabbedpanel id="localtabs">
-  <sj:tab id="tab1" target="location" label="Location"/>
+  <sj:tab id="tab1" target="ListAccount" label="List Account"/>
     <%--  <sj:tab id="tab2" target="ip" label="IP"/>
       <sj:tab id="tab3" target="browser" label="Web browser"/>
       <sj:tab id="tab4" target="bgp" label="BGP data"/>
       <sj:tab id="tab5" target="mysql" label="Mysql"/>
       <sj:tab id="tab6" target="report" label="Report"/>
       <sj:tab id="tab7" target="map" label="Map"/>--%>
-  <div id="location">
-    <p>Hi! 👋 It looks like your location is currently: <s:property value="timeZone"/></p>
+  <div id="ListAccount">
       <div style="margin-top: 40px; margin-right: 150px; margin-left: 150px;">
-          <table>
+          <table id="accounts">
               <thead>
-              <tr style="background-color: #E0E0E1;">
+              <tr>
                   <th>NAME</th>
-                  <th>EMAIL</th>
-                  <th>MOBILE</th>
-                  <th>COLLEGE</th>
-                  <th>COURSE</th>
-                  <th>SKILLS</th>
-                  <th>MARKS 1</th>
-                  <th>MARKS 2</th>
-                  <th>MARKS 3</th>
+                  <th>Last Name</th>
               </tr>
               </thead>
-              <s:iterator value="dataList">
-                  <tr>
-                      <td><s:property value="id" /></td>
+              <s:iterator value="accounts">
+                  <tr style="border: black; border-size:1px;">
                       <td><s:property value="name" /></td>
                       <td><s:property value="lastName" /></td>
                   </tr>
