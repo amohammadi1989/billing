@@ -20,7 +20,7 @@
     </style>
 </head>
 <body>
-<div class="container pale-blue leftbar border-blue">
+<%--<div class="container pale-blue leftbar border-blue">
 <p>Report</p>
 </div>
     <p>Hi! It looks like your location is currently: <s:property value="timeZone"/></p>
@@ -35,6 +35,6 @@
     <p>BGP whois information:</p>
     <p><pre><s:property value="bgpData"/></pre></p>
 <br/>
-<p><s:property value="notice"/></p>
+<p><s:property value="notice"/></p>--%>
 </body>
 </html>

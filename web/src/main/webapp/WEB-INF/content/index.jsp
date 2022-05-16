@@ -36,55 +36,58 @@
 <body>
 <sj:tabbedpanel id="localtabs">
   <sj:tab id="tab1" target="ListAccount" label="List Account"/>
-    <%--  <sj:tab id="tab2" target="ip" label="IP"/>
-      <sj:tab id="tab3" target="browser" label="Web browser"/>
-      <sj:tab id="tab4" target="bgp" label="BGP data"/>
-      <sj:tab id="tab5" target="mysql" label="Mysql"/>
-      <sj:tab id="tab6" target="report" label="Report"/>
-      <sj:tab id="tab7" target="map" label="Map"/>--%>
+      <sj:tab id="tab2" target="Account" label="Account"/>
+      <sj:tab id="tab3" target="Report" label="Report"/>
+
   <div id="ListAccount">
       <div style="margin-top: 40px; margin-right: 150px; margin-left: 150px;">
           <table id="accounts">
               <thead>
               <tr>
+                  <th>#</th>
                   <th>NAME</th>
                   <th>Last Name</th>
+                  <th>Age</th>
+                  <th>Address</th>
+                  <th>Amount</th>
               </tr>
               </thead>
               <s:iterator value="accounts">
                   <tr style="border: black; border-size:1px;">
+                      <td><s:property value="id"/> </td>
                       <td><s:property value="name" /></td>
                       <td><s:property value="lastName" /></td>
+                      <td><s:property value="age"/> </td>
+                      <td><s:property value="address" /></td>
+                      <td><s:property value="amount" /></td>
                   </tr>
               </s:iterator>
           </table>
       </div>
   </div>
-<%--  <div id="ip">
-    <p>Your public address is: <s:property value="clientIp"/></p>
-    <p>Your ISP: <s:property value="isp"/></p>
-    <p>Your ISP ASN: <s:property value="as"/></p>
-  </div>
-  <div id="browser">
-      <p>Your web browser is: <s:property value="browser"/></p>
-  </div>
-  <div id="bgp">
-        <p><pre><s:property value="bgpData"/></pre></p>
-  </div>
-  <div id="mysql">
-    <div align="left">
-        <h3>Backup your MySql database</h3>
-        <s:form action="backup" method="post">
-            <s:textfield name="hostname" label="Hostname" required="true" />
-            <s:textfield name="user" label="User" required="true" />
-            <s:password name="password" label="Password" required="true" />
-            <s:textfield name="database" label="Database" required="true" />
-            <s:checkbox label="Skip column statistics (mysql 8 or later)" name="skipColStat" value="true" fieldValue="true" />
-            <s:hidden name="timestamp" value="%{timestamp}" />
-            <s:submit value="Backup" />
+    <div id="Account">
+        <div align="left">
+            <h3>Backup your MySql database</h3>
+            <s:form action="addAccount" method="post">
+                <s:textfield name="name" label="Name" required="true" />
+                <s:textfield name="lastName" label="LastName" required="true" />
+                <s:textfield name="age" label="Age" required="true" />
+                <s:textfield name="address" label="Address" required="true" />
+                <s:textfield name="amount" label="Amount" required="true" />
+                <s:submit value="Account" />
+            </s:form>
+        </div>
+    </div>
+    <div id="Report">
+        <h3>Find All Record</h3>
+        <s:form action="/billing/pdf" method="get">
+            <s:textfield name="name" label="Name" required="true" />
+            <%--    <s:textfield name="lastName" label="LastName" required="true" />--%>
+            <s:submit value="Generate Report" />
         </s:form>
     </div>
-  </div>
+
+<%--
   <div id="report">
       <h3>Download all information as a PDF</h3>
           <s:form action="pdf" method="post">

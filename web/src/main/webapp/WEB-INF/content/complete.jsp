@@ -12,7 +12,7 @@
     </style>
 </head>
 <body>
-<sj:tabbedpanel id="localtabs">
+<%--<sj:tabbedpanel id="localtabs">
     <b>We have processed your request.</b>
     <p/>
     <s:url var="fileDownload" namespace="/" action="download/sql.gz"></s:url>
@@ -27,6 +27,6 @@
     <pre><s:property value="execLog"/>
     </p>
     </s:if>
-</sj:tabbedpanel>
+</sj:tabbedpanel>--%>
 </body>
 </html>

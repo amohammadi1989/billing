@@ -12,7 +12,7 @@ import javax.servlet.Filter;
 
 
 @Configuration
-public class Struts2Configuration implements WebMvcConfigurer {
+public  class Struts2Configuration implements WebMvcConfigurer {
 
     private static final String[] STRUTS_RESOURCE_LOCATIONS = {"classpath:/template/"};
 

@@ -23,7 +23,6 @@ public class IndexAction extends ActionSupport {
     @Action(value = "/index", results = {@Result(location = "index.jsp", name = "success")})
     public String execute() {
         accounts=accountServices.getAccount();
-       // accountServices.getAccount().parallelStream().forEach( System.out::println );
         return SUCCESS;
     }
     
