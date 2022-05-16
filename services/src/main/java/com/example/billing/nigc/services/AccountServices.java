@@ -24,7 +24,9 @@ public class AccountServices {
   public List<Account> getAccount() {
     return accountRepository.findAll();
   }
-  
+  public List<Account> getAccountByName(String name){
+    return accountRepository.findAccountsByName(name);
+  }
   @PostConstruct
   public void init() {
     Faker faker=new Faker(new Locale( "en-US"));
