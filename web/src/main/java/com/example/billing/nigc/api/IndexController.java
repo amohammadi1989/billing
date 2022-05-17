@@ -42,8 +42,11 @@ public class IndexController {
   public ResponseEntity<byte[]> getEmployeeRecordReport(@PathParam( "name" ) String name) {
   
     try {
-   
-      List<Account> accounts = accountServices.getAccount();
+      List<Account> accounts=null;
+      if(!name.isEmpty())
+      accounts = accountServices.getAccountByName(name);
+      else
+        accounts=accountServices.getAccount();
   
       final InputStream stream = this.getClass().getResourceAsStream( "/report.jrxml");
   
@@ -52,7 +55,7 @@ public class IndexController {
       final JRBeanCollectionDataSource source = new JRBeanCollectionDataSource( accounts);
   
       final Map<String, Object> parameters = new HashMap<>();
-      parameters.put("Date",(new Date()).toString());
+      parameters.put("createdBy",(new Date()).toString());
   
       final JasperPrint print = JasperFillManager.fillReport( report, parameters, source);
       

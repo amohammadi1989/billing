@@ -50,6 +50,7 @@
                   <th>Age</th>
                   <th>Address</th>
                   <th>Amount</th>
+                  <th>Interest</th>
               </tr>
               </thead>
               <s:iterator value="accounts">
@@ -60,6 +61,7 @@
                       <td><s:property value="age"/> </td>
                       <td><s:property value="address" /></td>
                       <td><s:property value="amount" /></td>
+                      <td><s:property value="newAmount" /></td>
                   </tr>
               </s:iterator>
           </table>
@@ -67,13 +69,13 @@
   </div>
     <div id="Account">
         <div align="left">
-            <h3>Backup your MySql database</h3>
+            <h3>Add account to database</h3>
             <s:form action="addAccount" method="post">
-                <s:textfield name="name" label="Name" required="true" />
-                <s:textfield name="lastName" label="LastName" required="true" />
-                <s:textfield name="age" label="Age" required="true" />
-                <s:textfield name="address" label="Address" required="true" />
-                <s:textfield name="amount" label="Amount" required="true" />
+                <s:textfield name="name" label="Name" />
+                <s:textfield name="lastName" label="LastName"  />
+                <s:textfield name="age" label="Age"  />
+                <s:textfield name="address" label="Address" />
+                <s:textfield name="amount" label="Amount" />
                 <s:submit value="Account" />
             </s:form>
         </div>
@@ -81,7 +83,7 @@
     <div id="Report">
         <h3>Find All Record</h3>
         <s:form action="/billing/pdf" method="get">
-            <s:textfield name="name" label="Name" required="true" />
+            <s:textfield name="name" label="Name"/>
             <%--    <s:textfield name="lastName" label="LastName" required="true" />--%>
             <s:submit value="Generate Report" />
         </s:form>

@@ -1,5 +1,6 @@
 package com.example.billing.nigc.action;
 
+import com.example.billing.nigc.entity.Account;
 import com.example.billing.nigc.services.AccountServices;
 import com.github.javafaker.Faker;
 import com.opensymphony.xwork2.ActionSupport;
@@ -11,9 +12,11 @@ import org.apache.struts2.convention.annotation.InterceptorRef;
 import org.apache.struts2.convention.annotation.InterceptorRefs;
 import org.apache.struts2.convention.annotation.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.Locale;
 import java.util.StringTokenizer;
 import java.util.stream.Stream;
@@ -24,18 +27,19 @@ import java.util.zip.ZipOutputStream;
 @Getter
 @Setter
 @Log
-@InterceptorRefs({
+/*@InterceptorRefs({
         @InterceptorRef(value = "defaultStack"),
         @InterceptorRef(value = "execAndWait")}
-)
+)*/
 public class AccountAction extends ActionSupport {
     private static final long serialVersionUID = 3919456810740031020L;
 
     @Autowired
     AccountServices accountServices;
+    List<Account> accounts;
     private String name;
     private String lastName;
-    private String age;
+    private int age;
     private String address;
     private String amount;
 
@@ -46,18 +50,19 @@ public class AccountAction extends ActionSupport {
 
     @Override
     @Action(value = "/addAccount", results = {
-            @Result(location = "complete.jsp", name = SUCCESS),
-            @Result(location = "wait.jsp", name = "wait"),
-            @Result(location = "fail.jsp", name = ERROR)})
+            @Result(location = "index.jsp", name = "success")})
+   
     public String execute() {
         try {
-            Faker faker=new Faker(new Locale( "en-US"));
             accountServices.saveAccount( name,lastName,age,address,amount );
+            accounts=accountServices.getAccount();
         } catch (Exception e) {
-            return ERROR;
+          //  return ERROR;
         }
-        return SUCCESS;
+        return "success";
+        //return null;
     }
+    
     
 
 }
