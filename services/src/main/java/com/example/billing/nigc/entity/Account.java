@@ -3,6 +3,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.kie.api.io.ResourceType;
 import org.kie.internal.KnowledgeBase;
 import org.kie.internal.KnowledgeBaseFactory;
@@ -25,6 +26,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Builder
 @NoArgsConstructor
+@Cacheable
+@org.hibernate.annotations.Cache( usage = CacheConcurrencyStrategy.READ_ONLY)
 public class Account implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

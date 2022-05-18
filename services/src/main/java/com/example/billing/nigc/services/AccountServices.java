@@ -33,7 +33,7 @@ public class AccountServices {
   public List<Account> getAccount() {
     List<Account> accounts=accountRepository.findAll();
     accounts.forEach(a-> session.execute( a ) );
-    accounts.forEach( System.out::println );
+    //accounts.forEach( System.out::println );
     return accounts;
   }
   public List<Account> getAccountByName(String name){
