@@ -6,9 +6,10 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.QueryHint;
 import java.util.List;
-@Repository
 public interface AccountRepository extends JpaRepository<Account, Long> {
   @QueryHints(@QueryHint(name = org.hibernate.annotations.QueryHints.CACHEABLE, value = "true"))
   List<Account> findAll();
   List<Account> findAccountsByName(String name);
+  public List getAccountWithElement(Long id);
+  
 }

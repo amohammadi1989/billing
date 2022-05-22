@@ -37,6 +37,7 @@ public class AccountServices {
     return accounts;
   }
   public List<Account> getAccountByName(String name){
+    List<Account> accounts=accountRepository.getAccountWithElement( 1l );
     return accountRepository.findAccountsByName(name);
   }
   private static StatelessKnowledgeSession session;
