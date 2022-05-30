@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.action.extension" value="html"/>
+    <constant name="struts.convention.action.packages" value="com.example.structs2.action"/>
+    <constant name="struts.convention.classes.reload" value="false" />
+    <constant name="struts.convention.exclude.parentClassLoader" value="false" />
+    <constant name="struts.custom.i18n.resources" value="messages" />
+
+    <package name="default" extends="action" namespace="/">
+        <action name="hello" class="com.example.billing.nigc.action.HelloStruts1Action">
+            <result name="success">/WEB-INF/constant/index.jsp</result>
+        </action>
+    </package>
+    <constant name="struts.ckeditor.allowUploads" value="true" />
+    <constant name="struts.ckeditor.allowedFileExtensions" value="jpg,jpeg,png" />
+    <constant name="struts.ckeditor.uploadFolder" value="/imageUploads" />
+
+</struts>-->
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+   <form-beans>
+        <form-bean name="actionForm"
+                   type="com.example.billing.nigc.action.test.ActionForm"/>
+    </form-beans>
+
+    <action-mappings>
+        <action path="/index" name="actionForm"
+                type="com.example.billing.nigc.action.test.LoginAction">
+            <forward name="success" path="/index.jsp"/>
+        </action>
+    </action-mappings>
+    <controller>
+        <set-property property="processorClass" value="com.example.billing.nigc.action.test.CustomProcessor"/>
+    </controller>
+
+<!--    <controller>
+        <set-property property="processorClass" value="com.smalik.common.CustomProcessor"/>
+    </controller>-->
+
+</struts-config>
