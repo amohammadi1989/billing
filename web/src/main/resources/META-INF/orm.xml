@@ -1,0 +1,22 @@
+<entity-mappings
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+        version="2.2">
+    <entity class="com.example.billing.nigc.entity.Account" name="Account">
+    <named-query  name="getAll">
+        <query>select a from Account a</query>
+    </named-query>
+    </entity>
+    <!--<persistence-unit>
+
+    </persistence-unit>
+    <mapping-file>META-INF/myMappingFile1.xml</mapping-file>
+    <mapping-file>META-INF/myMappingFile2.xml</mapping-file>-->
+
+    <!-- You can have more...
+    <named-query name="Restaurant.otherMethodName">
+        <query>from Restaurant where whatever ... </query>
+    </named-query>
+    -->
+
+</entity-mappings>
