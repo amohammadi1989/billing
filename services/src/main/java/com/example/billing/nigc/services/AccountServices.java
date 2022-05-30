@@ -13,6 +13,7 @@ import org.kie.internal.io.ResourceFactory;
 import org.kie.internal.runtime.StatelessKnowledgeSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.TransactionManager;
 
 import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
@@ -33,6 +34,7 @@ public class AccountServices {
   
   public List<Account> getAccount() {
     List<Account> accounts=accountRepository.findAll();
+    List l=accountRepository.getAccountWithElement();
     accounts.forEach(a-> session.execute( a ) );
     accounts.forEach( System.out::println );
     return accounts;

@@ -1,4 +1,4 @@
-package com.example.billing.nigc.action.test;
+package com.example.billing.nigc.action;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionMapping;

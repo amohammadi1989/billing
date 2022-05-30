@@ -1,4 +1,4 @@
-package com.example.billing.nigc.action.test;
+package com.example.billing.nigc.action;
 import com.example.billing.nigc.entity.Account;
 import com.example.billing.nigc.services.AccountServices;
 import org.apache.struts.action.Action;
@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
-public class LoginAction extends Action {
+public class IndexAction extends Action {
   @Autowired
   private AccountServices accountServices;
   

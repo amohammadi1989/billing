@@ -9,5 +9,6 @@ import java.util.List;
 public interface AccountRepository extends JpaRepository<Account, String> {
   List<Account> findAccountsByName(String name);
   public List getAccountWithElement(String id);
+  public List getAccountWithElement();
   
 }

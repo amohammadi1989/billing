@@ -30,17 +30,17 @@
 
    <form-beans>
         <form-bean name="actionForm"
-                   type="com.example.billing.nigc.action.test.ActionForm"/>
+                   type="com.example.billing.nigc.action.IndexForm"/>
     </form-beans>
 
     <action-mappings>
         <action path="/index" name="actionForm"
-                type="com.example.billing.nigc.action.test.LoginAction">
+                type="com.example.billing.nigc.action.IndexAction">
             <forward name="success" path="/index.jsp"/>
         </action>
     </action-mappings>
     <controller>
-        <set-property property="processorClass" value="com.example.billing.nigc.action.test.CustomProcessor"/>
+        <set-property property="processorClass" value="com.example.billing.nigc.action.CustomProcessor"/>
     </controller>
 
 <!--    <controller>

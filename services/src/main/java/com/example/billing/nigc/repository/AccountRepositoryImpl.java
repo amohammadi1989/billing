@@ -17,4 +17,8 @@ public class AccountRepositoryImpl {
   List<Account> accounts=  entityManager.createNamedQuery( "getAll", Account.class ).getResultList();
   return accounts;
   }
+  public List getAccountWithElement(){
+    List<Account> accounts=  entityManager.createNamedQuery( "getAll", Account.class ).getResultList();
+    return accounts;
+  }
 }

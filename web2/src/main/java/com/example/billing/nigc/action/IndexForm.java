@@ -1,4 +1,4 @@
-package com.example.billing.nigc.action.test;
+package com.example.billing.nigc.action;
 
 import com.example.billing.nigc.entity.Account;
 
@@ -7,7 +7,7 @@ import java.util.List;
  * Created By: Ali Mohammadi
  * Date: 28 May, 2022
  */
-public class ActionForm extends org.apache.struts.action.ActionForm {
+public class IndexForm extends org.apache.struts.action.ActionForm {
   private List<Account> accountList;
   private String name;
   
