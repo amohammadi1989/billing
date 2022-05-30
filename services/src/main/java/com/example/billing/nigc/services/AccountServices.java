@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.IntStream;
@@ -28,18 +29,22 @@ public class AccountServices {
   
   @Autowired
   private  AccountRepository accountRepository;
-  
+
   
   public List<Account> getAccount() {
     List<Account> accounts=accountRepository.findAll();
     accounts.forEach(a-> session.execute( a ) );
-    //accounts.forEach( System.out::println );
+    accounts.forEach( System.out::println );
     return accounts;
   }
   public List<Account> getAccountByName(String name){
-    List<Account> accounts=accountRepository.getAccountWithElement( 1l );
+    List<Account> accounts=accountRepository.getAccountWithElement( "40001" );
     return accountRepository.findAccountsByName(name);
   }
+  public Account getAccountById(String id){
+    return accountRepository.findById( id ).get();
+  }
+  
   private static StatelessKnowledgeSession session;
   @PostConstruct
   public void init() {

@@ -32,11 +32,15 @@ public class IndexController {
 
     @GetMapping("/")
     public RedirectView index(RedirectAttributes attributes) {
-        return new RedirectView("index.html");
+        return new RedirectView("/billing/index.html");
     }
     @GetMapping("/getAccount")
     public List<Account> getAccount(){
         return accountServices.getAccount();
+    }
+    @GetMapping("/find/{id}")
+    public Account findById(@PathVariable String id){
+      return accountServices.getAccountById( id );
     }
   @GetMapping(value = "/pdf")
   public ResponseEntity<byte[]> getEmployeeRecordReport(@PathParam( "name" ) String name) {

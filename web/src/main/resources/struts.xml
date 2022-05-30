@@ -13,8 +13,8 @@
 
     <package name="default" extends="struts-default, pdfstream-default" namespace="/">
     </package>
-
     <constant name="struts.ckeditor.allowUploads" value="true" />
     <constant name="struts.ckeditor.allowedFileExtensions" value="jpg,jpeg,png" />
     <constant name="struts.ckeditor.uploadFolder" value="/imageUploads" />
+
 </struts>

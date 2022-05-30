@@ -13,9 +13,8 @@ public class AccountRepositoryImpl {
   @Autowired
   private EntityManager entityManager;
   
-  public List getAccountWithElement(Long id){
-  List<Account> accounts=
-  entityManager.createQuery( "select a from Account a", Account.class ).getResultList();
+  public List getAccountWithElement(String id){
+  List<Account> accounts=  entityManager.createNamedQuery( "getAll", Account.class ).getResultList();
   return accounts;
   }
 }
